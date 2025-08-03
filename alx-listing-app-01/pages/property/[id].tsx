@@ -7,14 +7,14 @@ import ReviewSection from "@/components/property/ReviewSection";
 export default function PropertyPage() {
   const router = useRouter();
   const { id } = router.query;
+
   const property = PROPERTYLISTINGSAMPLE.find((item) => item.name === id);
 
   if (!property) return <p>Property not found</p>;
 
   return (
-    <div>
+    <div className="container mx-auto p-4 space-y-8">
       <PropertyDetail property={property} />
-      <PropertyDetail />
       <BookingSection />
       <ReviewSection />
     </div>
